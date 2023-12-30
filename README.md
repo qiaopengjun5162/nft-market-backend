@@ -24,6 +24,8 @@ remixd -s /Users/qiaopengjun/Code/sui/nft-market-backend --remix-ide https://rem
 npm install ethers
 node nft-minter.js
 npm install dotenv --save
+npm i cors
+npx hardhat node
 ```
 
 - <https://www.npmjs.com/package/body-parser>
@@ -33,3 +35,4 @@ npm install dotenv --save
 - <https://docs.ipfs.tech/how-to/command-line-quick-start/#initialize-the-repository>
 - <http://127.0.0.1:5001/ipfs/bafybeidf7cpkwsjkq6xs3r6fbbxghbugilx3jtezbza7gua3k5wjixpmba/#/>
 - <https://www.npmjs.com/package/dotenv>
+- <https://www.npmjs.com/package/cors>

@@ -5,21 +5,29 @@ import { create } from 'kubo-rpc-client';
 const ipfs = create('http://localhost:5001')
 
 export async function uploadFileToIPFS(filePath) {
-    const file = fs.readFileSync(filePath);
-    const result = await ipfs.add({
-        path: filePath,
-        content: file
-    });
-    console.log(result);
-    return result
+    try {
+        const file = fs.readFileSync(filePath);
+        const result = await ipfs.add({
+            path: filePath,
+            content: file
+        });
+        console.log(result);
+        return result
+    } catch (err) {
+        console.error('Failed to add file to IPFS:', err);
+    }
 }
 
 // uploadFileToIPFS("files/qkl-logo.jpg");
 
 export async function uploadJSONToIPFS(json) {
-    const result = await ipfs.add(JSON.stringify(json));
-    console.log(result);
-    return result
+    try {
+        const result = await ipfs.add(JSON.stringify(json));
+        console.log(result);
+        return result
+    } catch (err) {
+        console.error('Failed to add JSON to IPFS:', err);
+    }
 }
 
 // uploadJSONToIPFS({ name: "test" })
