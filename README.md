@@ -22,6 +22,8 @@ ipfs init
 ipfs daemon
 remixd -s /Users/qiaopengjun/Code/sui/nft-market-backend --remix-ide https://remix.ethereum.org
 npm install ethers
+node nft-minter.js
+npm install dotenv --save
 ```
 
 - <https://www.npmjs.com/package/body-parser>
@@ -30,3 +32,4 @@ npm install ethers
 - <http://127.0.0.1:8080/ipfs/QmaPD7XW1YNk78TKJuZws44Q9cvDNNw591SRiBpGAdB8oh/>
 - <https://docs.ipfs.tech/how-to/command-line-quick-start/#initialize-the-repository>
 - <http://127.0.0.1:5001/ipfs/bafybeidf7cpkwsjkq6xs3r6fbbxghbugilx3jtezbza7gua3k5wjixpmba/#/>
+- <https://www.npmjs.com/package/dotenv>

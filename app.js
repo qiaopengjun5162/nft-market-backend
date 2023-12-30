@@ -3,6 +3,9 @@ import bodyParser from "body-parser";
 import express from "express";
 import fileUpload from "express-fileupload";
 import { uploadFileToIPFS, uploadJSONToIPFS } from "./ipfs-uploader.js";
+import { mint } from './nft-minter.js';
+// import dotenv from 'dotenv';
+// dotenv.config("./.env");
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -37,6 +40,9 @@ app.post('/upload', (req, res) => {
         const metadataResult = await uploadJSONToIPFS(metadata);
         const metadataCid = metadataResult.cid.toString();
         console.log(metadataCid);
+
+        await mint("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", 'http://127.0.0.1:8080/ipfs/' + metadataCid)
+
         res.json({
             message: 'file uploaded successfully!',
             // data: fileCid
